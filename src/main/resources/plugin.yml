@@ -1,0 +1,8 @@
+name: MagicPole
+version: '${project.version}'
+main: com.github.merunno.magicpole.MagicPole
+api-version: 1.17
+prefix: MP
+authors: [ merunno ]
+description: This is the Spigot plugin that implements the magic created on Day 16 of the Minecraft Server Development and Management Advent Calendar 2021.
+website: https://github.com/merunno/MagicPole
