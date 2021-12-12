@@ -1,5 +1,6 @@
 package com.github.merunno.magicpole;
 
+import com.github.merunno.magicpole.Listener.ChantingListener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -51,6 +52,8 @@ public final class MagicPole extends JavaPlugin {
 
         Bukkit.addRecipe(customRecipe);
 
+        // Registration Event //
+        getServer().getPluginManager().registerEvents(new ChantingListener(), this);
     }
 
     @Override
