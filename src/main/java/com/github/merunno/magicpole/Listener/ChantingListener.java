@@ -21,7 +21,9 @@ public class ChantingListener implements Listener {
         Player player = e.getPlayer();
         ItemStack item = e.getItem();
         Location loc = player.getLocation();
-        if(item != null && Objects.requireNonNull(item.getItemMeta()).getDisplayName().equals(ChatColor.LIGHT_PURPLE + "MagicPole") && item.getType() == Material.BLAZE_ROD) {
+        if(item == null) return;
+        if(!item.hasItemMeta()) return;
+        if(Objects.requireNonNull(item.getItemMeta()).getDisplayName().equalsIgnoreCase(ChatColor.LIGHT_PURPLE + "MagicPole") && item.getType() == Material.BLAZE_ROD) {
             int foodlv = player.getFoodLevel();
             if(foodlv <= 0) { // 満腹度が0だった場合は詠唱をキャンセル
                 player.sendMessage(ChatColor.RED + "お腹が空いて魔法を詠唱できない.........");
